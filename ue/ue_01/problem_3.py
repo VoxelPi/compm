@@ -20,3 +20,4 @@ def f(s: str, capitalize = False):
 
 print(replace_word("this test is a test", "test", "word"))
 print(f("this test is a test"))
+print(f("this test is a test", True))
