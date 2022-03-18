@@ -41,7 +41,7 @@ class VectorPlus(Vector): # Extend Vector class.
         Calculates the inner vector product.
         """
         assert(len(self.entries) == len(z2.entries))
-        return VectorPlus([self.entries[i] * z2.entries[i] for i in range(len(self.entries))])
+        return sum([self.entries[i] * z2.entries[i] for i in range(len(self.entries))])
     
     def outer(self, z2):
         """
@@ -55,5 +55,5 @@ b = VectorPlus([1, 2, 3, 4])
 print("\nVectorPlus:")
 print(f"a = {a.entries}")
 print(f"b = {b.entries}")
-print(f"a inner b = {a.inner(b).entries}")
+print(f"a inner b = {a.inner(b)}")
 print(f"a outer b = {a.outer(b).entries}")
