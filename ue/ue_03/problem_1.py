@@ -15,7 +15,7 @@ class quaternion:
         a3 = self.a0 * other.a3 + self.a1 * other.a2 - self.a2 * other.a1 + self.a3 * other.a0
         return quaternion(a0, a1, a2, a3)
     
-    def __str__(self) -> str:
+    def __str__(self):
         return f"({self.a0} + {self.a1}*i + {self.a2}*j + {self.a3}*k)"
 
 z1 = quaternion(1, 1, 1, 1)
