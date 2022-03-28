@@ -1,4 +1,3 @@
-from os import stat
 import time
 
 def a_slow(n):
@@ -6,7 +5,7 @@ def a_slow(n):
     if (n == 0):
         return a0
     else:
-        return 4 * a_slow(n-1) / (3 * a_slow(n-1) + 3)
+        return (4 * a_slow(n-1)) / (3 * a_slow(n-1) + 3)
 
 def a_fast(n):
     a0 = 1
@@ -14,8 +13,7 @@ def a_fast(n):
         return a0
     else:
         a_n_1 = a_fast(n-1)
-        return 4 * a_n_1 / (3 * a_n_1 + 3)
-
+        return (4 * a_n_1) / (3 * a_n_1 + 3)
 
 def b_slow(n):
     b0 = 5/4
@@ -50,7 +48,8 @@ def c_fast(n):
 def benchmark(fun, n):
     start = time.time()
     res = fun(n)
-    return (f"{time.time() - start} sec", res)
+    duration = format(time.time() - start, ".3f")
+    return (f"{duration} sec", format(res, ".3f"))
 
 N = 22
 M = 500
