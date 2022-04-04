@@ -27,14 +27,17 @@ random_numbers_array = np.array(random_numbers)
 # random_numbers_array = np.random.random(10000000) * 100000000
 # random_numbers = list(random_numbers_array)
 
+# Compute the maximum element using own implementation.
 tic()
 print(my_max(random_numbers))
 toc()
 
+# Compute the maximum element using build-in implementation.
 tic()
 print(max(random_numbers))
 toc()
 
+# Compute the maximum element using numpy implementation.
 tic()
 print(np.max(random_numbers_array))
 toc()
