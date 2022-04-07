@@ -1,6 +1,5 @@
 from functools import reduce
 
-
 def list_to_sentence(list):
     return reduce(lambda sentence, word: f"{sentence} {word}", map(lambda word : "".join(word), list))
 
