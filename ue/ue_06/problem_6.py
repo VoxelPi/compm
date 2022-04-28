@@ -26,7 +26,7 @@ def addFace(indices, A, B, C, D):
     indices.append((A, B, C))
     indices.append((C, B, D))
 
-#     3 ------- 5
+#     3 ------- 7
 #   / |       / |
 # 2 ------- 6   |
 # |   |     |   |
