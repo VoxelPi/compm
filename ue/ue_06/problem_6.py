@@ -26,6 +26,15 @@ def addFace(indices, A, B, C, D):
     indices.append((A, B, C))
     indices.append((C, B, D))
 
+#     3 ------- 7
+#   / |       / |
+# 2 ------- 6   |
+# |   |     |   |
+# |   1 ----|-- 5
+# | /       | /
+# 0 ------- 4
+#
+# Create vertices
 vertices = np.array([
     [0.0, 0.0, 0.0], # back-bottom-left
     [0.0, 0.0, 1.0], # back-bottom-right
@@ -37,6 +46,7 @@ vertices = np.array([
     [1.0, 1.0, 1.0], # front-top-right
 ])
 
+# Create indices
 indices = []
 addFace(indices, 0, 4, 2, 6) # Front
 addFace(indices, 4, 5, 6, 7) # Right
