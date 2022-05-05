@@ -1,5 +1,4 @@
 import numpy as np
-from numpy.polynomial.polynomial import Polynomial
 import matplotlib.pyplot as plt
 from scipy.integrate import cumulative_trapezoid
 
