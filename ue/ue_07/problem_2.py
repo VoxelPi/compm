@@ -15,6 +15,7 @@ coef1 = poly.coef[::-1] # reverse order of coefficients
 
 plt.scatter(x, e1, color="red", label="points and values")
 plt.plot(x_fine, Polynomial(coef1)(x_fine), label="Lagrange polynomial")
+plt.legend()
 plt.show()
 
 # Interpolate five basis vectors e1, e2, e3, e4, e5.
@@ -29,11 +30,12 @@ coef4 = lagrange(x, e4).coef[::-1] # reverse order of coefficients
 coef5 = lagrange(x, e5).coef[::-1] # reverse order of coefficients
 
 plt.figure()
-plt.plot(x_fine, Polynomial(coef1)(x_fine), label="Lagrange polynomial")
-plt.plot(x_fine, Polynomial(coef2)(x_fine), label="Lagrange polynomial")
-plt.plot(x_fine, Polynomial(coef3)(x_fine), label="Lagrange polynomial")
-plt.plot(x_fine, Polynomial(coef4)(x_fine), label="Lagrange polynomial")
-plt.plot(x_fine, Polynomial(coef5)(x_fine), label="Lagrange polynomial")
+plt.plot(x_fine, Polynomial(coef1)(x_fine), label="Lagrange polynomial of e1")
+plt.plot(x_fine, Polynomial(coef2)(x_fine), label="Lagrange polynomial of e2")
+plt.plot(x_fine, Polynomial(coef3)(x_fine), label="Lagrange polynomial of e3")
+plt.plot(x_fine, Polynomial(coef4)(x_fine), label="Lagrange polynomial of e4")
+plt.plot(x_fine, Polynomial(coef5)(x_fine), label="Lagrange polynomial of e5")
+plt.legend()
 plt.show()
 
 # Interpolate arbitrary data vector y
@@ -42,6 +44,7 @@ coef = lagrange(x, y).coef[::-1] # reverse order of coefficients
 
 plt.figure()
 plt.scatter(x, y, color="red", label="points and values")
-plt.plot(x_fine, Polynomial(coef1)(x_fine)*y[0] + Polynomial(coef2)(x_fine)*y[1] + Polynomial(coef3)(x_fine)*y[2] + Polynomial(coef4)(x_fine)*y[3] + Polynomial(coef5)(x_fine)*y[4])
+plt.plot(x_fine, Polynomial(coef1)(x_fine)*y[0] + Polynomial(coef2)(x_fine)*y[1] + Polynomial(coef3)(x_fine)*y[2] + Polynomial(coef4)(x_fine)*y[3] + Polynomial(coef5)(x_fine)*y[4], label="Sum")
 plt.plot(x_fine, Polynomial(coef)(x_fine), label="Lagrange polynomial", linestyle="--")
+plt.legend()
 plt.show()
