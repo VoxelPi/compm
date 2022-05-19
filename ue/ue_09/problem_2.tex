@@ -1,0 +1,14 @@
+\documentclass[a4paper, 11pt]{article}
+
+\usepackage{amsmath}
+\usepackage{fullpage}
+
+\begin{document}
+The Gamma function is defined as
+
+    \[ \Gamma(x) := \lim \limits_{n \to \infty} \frac{n!n^n}{x(x + 1) \cdots (x+n)} \]
+
+There holds the Weierstra\ss product representation
+
+\[ \displaystyle\frac{1}{\Gamma(x)} = x \cdot e^{Cx} \cdot \prod_{k=1}^{\infty}\left(1 + \frac{x}{k}\right)e^{-x/k} \text{ with } C := \lim \limits_{n \to \infty}\left(\sum_{k=1}^{n}\frac{1}{k} - \ln n\right) \]
+\end{document}
