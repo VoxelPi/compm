@@ -1,0 +1,39 @@
+\documentclass[a4paper, 11pt]{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{fullpage}
+
+\newtheorem{theorem}{Theorem}
+\newenvironment{pr}{\textbf{Proof.}}{\hfill\textbf{$\blacksquare$}}
+
+\begin{document}
+
+\begin{theorem}\label{theroem_label}
+Let $I \subset \mathbb{R}$ be a nonempty open interval.
+Then it holds for $f, g \in C^{\infty}(I)$ and $n \in \mathbb{N}$
+\[(fg)^{(n)} = \sum_{k=0}^{n}\binom{n}{k}f^{(k)}g^{(n-k)}.\]
+\end{theorem}
+\noindent
+\begin{pr}
+    Proof by induction:
+
+    For the base case is correct because 
+    \[(fg)' = f'g + fg' = \binom{1}{1}f'g + \binom{1}{0}fg' = \sum_{k=0}^{1}\binom{1}{k}f^{(k)}g^{(1-k)}.\]
+
+    For induction step assume that \eqref{theroem_label} holds for some $n \in \mathbb{N}$. That implies
+    \begin{align*}
+        (fg)^{(n+1)} &= \left((fg)^{(n)}\right)' \stackrel{\text{I.H.}}{=} \left(\sum_{k=0}^{n}\binom{n}{k}f^{(k)}g^{(n-k)}\right)'\\
+        &= \sum_{k=0}^{n}\binom{n}{k}\left(f^{(k)}g^{(n-k)}\right)'\\
+        &= \sum_{k=0}^{n}\binom{n}{k}\left(f^{(k+1)}g^{(n-k)}+f^{(k)}g^{(n-k+1)}\right)\\
+        &= \sum_{k=0}^{n}\binom{n}{k}f^{(k+1)}g^{(n-k)} + \sum_{k=0}^{n}\binom{n}{k}f^{(k)}g^{(n-k+1)}\\
+        &= \sum_{k=1}^{n+1}\binom{n}{k-1}f^{(k)}g^{(n-k+1)} + \sum_{k=0}^{n}\binom{n}{k}f^{(k)}g^{(n-k+1)}\\
+        &= \sum_{k=1}^{n}\binom{n}{k-1}f^{(k)}g^{(n-k+1)} + \binom{n}{n}f^{(n+1)}g + \binom{n}{0}f g^{(n+1)}+ \sum_{k=1}^{n}\binom{n}{k}f^{(k)}g^{(n-k+1)}\\
+        &= \left(\sum_{k=1}^{n}\left(\binom{n}{k-1} + \binom{n}{k}\right)f^{(k)}g^{(n-k+1)}\right) + \binom{n}{n}f^{(n+1)}g + \binom{n}{0}f g^{(n+1)}\\
+        &= \left(\sum_{k=1}^{n}\binom{n+1}{k}f^{(k)}g^{(n-k+1)}\right) + \binom{n+1}{n+1}f^{(n+1)}g + \binom{n+1}{0}f g^{(n+1)}\\
+        &= \sum_{k=0}^{n+1}\binom{n+1}{k}f^{(k)}g^{(n+1-k)}
+    \end{align*}
+\end{pr}
+
+\end{document}
